@@ -1,0 +1,928 @@
+/*
+browser-sync start --server --files "*.html, ./Campagne/*.css, ./Campagne/*.html, ./Campagne/projectpole/*.html, ./Campagne/* /*.html, ./Campagne/* /* /*.css, ./Campagne/* /*.css   "
+*/
+@font-face{
+    src: url(./font/caslon540.ttf);
+    font-family: "calson540";
+}
+@font-face{
+    src: url(./font/SF-Pro-Display-Regular.otf);
+    font-family: "SF pro";
+}
+:root{
+    /*pour respecter la chartre graphique*/
+    --melanzane: #322f31;
+    --melanzanet: #322f31cc;
+    --melanzanebutton: #322f3175;
+    --seafog: #dfdcd1;
+    --bleucatalina: #223956;
+    --selago: #f5f3f5;
+    --mangouste: #ad9069;
+    --opensans: 'Open Sans', sans-serif;
+    --blackt: #000000a1;
+    --opacity: 0.4;
+}
+body{
+    /*reset CSS*/
+    margin: 0px;
+}
+p{
+    font-family: SF pro;
+}
+#bodyus h4, #bodyus h3{
+    font-family: SF pro !important;
+}
+
+
+/*Début Page Home*/
+#body{
+    background-color: var(--melanzanet);/*permet un effet de voile au load*/
+    height: 100%;/**/
+    position: fixed;
+    left: 0%;
+    width: 100%;
+    top: 0%;
+}
+#imgbody{
+    /*image de background de la page d'acueil*/
+    height: 100%;
+    width: 100%;
+    background-image: url('./image/LOGO.png');
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#lien{
+    /*premet de faire qlq chose de propre et éviter un pb de boite*/
+    top: 0%;
+    height: 100%;
+}
+#body .a{
+    display: flex;
+}
+
+/*CSS pour faire l'effet de transition*/
+/*la classe a permet de setup les liens avec les images sans répeter les instructions*/
+.a{
+    position: relative;
+    height: 16.6667%;
+    width: 100%;
+    opacity: 0;
+    text-align: center;
+    background-position: center;
+    background-size: cover;
+}
+/*chaque element id permet de donner l'effet de transition progressive avec les delay pour les 6 élé*/
+#lien #a{
+    background-image: url(./image/INTRO.png);  
+    transition: opacity 1s ease-in-out;
+    cursor: pointer;
+}
+#lien #b{
+    transition: opacity 1s ease-in-out 0.1s;
+    background-image: url(./image/NOUS.png);
+    cursor: pointer;
+}
+#lien #c{
+    transition: opacity 1s ease-in-out 0.2s;
+    background-image: url(./image/PROJETIT.png);
+    cursor: pointer;
+}
+#lien #d{
+    transition: opacity 1s ease-in-out 0.3s;
+    background-image: url(./image/LES\ PROJETS.png);
+    cursor: pointer;
+}
+#lien #e{
+    transition: opacity 1s ease-in-out 0.4s;
+    background-image: url(./image/NOS\ EVENTS.png);
+    cursor: pointer;
+}
+#lien #f{
+    transition: opacity 1s ease-in-out 0.5s;
+    background-image: url(./image/BUDGETS.png);
+    cursor: pointer;
+}
+#translate .a{
+    opacity: 1;
+}
+body #body p{
+    margin: auto;
+    z-index: 50;
+    text-transform: uppercase;
+    font-size: 32px;
+    font-family: calson540;
+    color: white;
+    text-decoration: none !important;
+    letter-spacing: 10px;
+    transition: letter-spacing 1s ease-in-out;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+body #body p:hover{
+    letter-spacing: 1vw;
+}
+/*fin page home*/
+
+
+
+
+
+
+/* Début Page Intro*/
+.flexintro{
+    display: flex;
+}
+.flexintro em{
+    margin: auto;
+}
+#bodyintro #imgbackgtop{
+    background-image: url(./image/INTRO.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+}
+#bodyintro #titre{
+    position: relative;
+    background: #322f317a;
+    color: black;
+    margin: auto;
+    padding: 15px 0 15px 15px;
+    border: transparent 1px;
+    border-radius: 50px;
+    display: inline-block;
+    top: 40px;
+    cursor: pointer;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+}
+
+
+ /* The Modal (background) */
+ .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: hidden; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    
+    margin: auto; /* 15% from the top and centered */
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  } 
+/*Fin page Intro*/
+
+
+
+
+
+
+
+/*Début Page Projet
+
+Le But est de faire un effet de tuile comme sur windows 10
+Pour cela, on va utiliser l'atribut grid du CSS*/
+#bodyproject h1{
+    text-align: center;
+    position: relative;
+    width: 100%;
+    padding-top: 98px;
+    padding-bottom: 115px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 30px;
+    letter-spacing: 10px;
+}
+#bodyproject{
+    font-family: calson540 !important;
+    margin: 50px;
+    color: white;
+    text-transform: uppercase;
+}
+#bodyproject span{
+    margin: auto;
+    text-align: center;
+    letter-spacing: 10px;
+    font-size: 1vw;
+    transition: letter-spacing 0.5s ease-in-out;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#bodyproject span:hover{
+    letter-spacing: 1vw;
+}
+#bodyproject .tuile{
+    cursor: pointer;
+    display: flex;
+    background-size: cover;
+    transition: box-shadow 0.5s ease-in-out;
+}
+#bodyproject .tuile:hover, #bodyproject .tuile:focus, #bodyproject .tuile:active {
+    box-shadow: 0px 2px 25px black!important;
+}
+/*
+On commence par les poles support 
+*/
+#bodyproject #ha{
+    background-image: url(./image/Titre\ Support.png);
+}
+#bodyproject #psuport{
+    display: grid;
+    grid-template-columns: 5fr 5fr 5fr;
+    grid-template-rows: 375px;
+    grid-column-gap: 5%;
+}
+#bodyproject #psuport .tuile{
+    grid-row-start: 1;
+}
+#bodyproject #psuport #a{
+    background-image: url(./image/Communication.png);
+    background-position: center;
+
+}
+#bodyproject #psuport #b{
+    background-image: url(./image/evenementiel.png);
+}
+#bodyproject #psuport #c{
+    background-image: url(./image/Commercial.png);
+}
+/*Fin poles support*/
+
+
+/*Début poles sport*/
+#bodyproject #hb{
+    background-image: url(./image/Titre\ Sportifs.png);
+}
+#bodyproject #psport{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 200px 200px 200px;
+    grid-column-gap: 5%;
+    grid-row-gap: 5%;
+    margin-bottom: 200px;
+    text-align: center;
+
+}
+#bodyproject .tuile{
+    background-color: var(--mangouste);
+}
+#bodyproject #psport #d{
+    grid-row-start: 1;
+    grid-row-end: 3;
+    background-image: url(./image/Football.png);
+}
+#bodyproject #psport #e{
+    grid-row-start: 1;
+    background-image: url(./image/Basket.png);
+}
+#bodyproject #psport #f{
+    grid-row-start: 2;
+    grid-column-start: 2;
+    background-image: url(./image/Sports\ de\ Combat.png);
+}
+#bodyproject #psport #g{
+    grid-row-start: 1;
+    background-image: url(./image/Rugby.png);
+
+}
+#bodyproject #psport #k{
+    grid-row-start: 2;
+    background-image: url(./image/Tennis.png);
+}
+#bodyproject #psport #h{
+    grid-row-start: 1;
+    grid-row-end: 3;
+    background-image: url(./image/Escalade.png);
+}
+#bodyproject #psport #i{
+    grid-row-start: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-image: url(./image/Fitness.png);
+}
+#bodyproject #psport #j{
+    grid-row-start: 3;
+    grid-column-start: 3;
+    grid-column-end: 5 !important;
+    background-image: url(./image/Danse.png);
+}
+/*Fin poles sport*/
+
+/*Fin Page Projet*/
+
+/*Début page event
+pareil une mosaïque */
+#bodyevent #gridevent{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 5%;
+    margin: 10px 20px 20px 20px;
+    position: relative;
+    height: 80%;
+}
+#bodyevent{
+    font-family: calson540;
+    text-transform: uppercase;
+    color: var(--bleucatalina);
+}
+#bodyevent h1{
+    margin: 0 auto 0 auto;
+    background-color: var(--bleucatalina);
+    width: 100vw;
+    color: white;
+    text-align: center;
+    letter-spacing: 10px;
+    padding: 40px 0px 20px 0px;
+}
+#bodyevent .tuile{
+    cursor: pointer;
+    display: flex;
+    transition: box-shadow 0.5s ease-in-out;
+}
+#bodyevent .tuile:hover{
+    box-shadow: 0px 0px 50px black;
+}
+#bodyevent .tuile span{
+    margin: auto;
+    color: var(--seafog);
+    transition: letter-spacing 2s ease-in-out;
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#bodyevent .tuile span:hover{
+    letter-spacing: 1vw;
+}
+#bodyevent #gridevent .tuile{
+    background-color: var(--mangouste);
+    background-size: cover;
+    background-position: center;
+    letter-spacing: 10px;
+    font-size: 150%;
+    font-family: calson540;
+}
+#bodyevent #gridevent #ski{
+    grid-column: span 2;
+    background-image: url(./image/Ski.png);
+    font-size: 200%;
+    letter-spacing: 10px;
+}
+#bodyevent #gridevent #xtrem{
+    grid-row: 3;
+    background-image: url(./image/xtrem.png);
+}
+#bodyevent #gridevent #sumcamp{
+    grid-row-start: 3;
+    background-image: url(./image/Summer.png);
+} 
+#bodyevent #gridevent #week{
+    background-image: url(./image/Weekendinte.png);
+
+}
+#bodyevent #gridevent #teambuild{
+    background-image: url(./image/Building.png);
+
+}
+/*Fin page event*/
+
+
+
+
+/*Début page Budget*/
+#bdybudget {
+    background-color: var(--bleucatalina);
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    width: 350px;
+    height: 350px;
+    margin: 7em auto;
+    border-radius: 1.5em;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+
+.sign {
+    padding-top: 80px;
+    color: var(--mangouste);
+    font-family: Calson540;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+
+
+
+
+.pass {
+        width: 76%;
+color: rgb(38, 50, 56);
+font-weight: 700;
+font-size: 14px;
+letter-spacing: 1px;
+background: rgba(136, 126, 126, 0.04);
+padding: 10px 20px;
+border: none;
+border-radius: 20px;
+outline: none;
+box-sizing: border-box;
+border: 2px solid rgba(0, 0, 0, 0.02);
+margin-bottom: 50px;
+margin-left: 46px;
+text-align: center;
+margin-bottom: 27px;
+font-family: SF pro;
+}
+
+
+.un:focus, .pass:focus {
+    border: 2px solid rgba(0, 0, 0, 0.18) !important;
+    
+}
+
+.submit {
+    cursor: pointer;
+    border-radius: 5em;
+    color: #fff;
+    background: linear-gradient(to right, var(--melanzane), black);
+    border: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    margin-left: 35%;
+    font-size: 13px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+
+@media (max-width: 600px) {
+    .main {
+        width: 100%;
+    }}
+  
+/*Fin page Budget*/
+
+
+
+/*Début des pages event majeurs*/
+#bdyinte, #bdyski, #bdyteam, #bdysummer, #bdyxtrem{
+    overflow: hidden !important;
+}
+
+.page{
+    position: relative;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 0px;
+    z-index: -50;
+}
+.textevent{
+    position: relative;
+    top: 40vh;
+    font-family: SF pro;
+    padding: 4vh;
+    text-align: justify;
+    word-spacing: 200%;
+    line-height: 150%;
+    background-color: var(--selago);
+    color: var(--melanzane);
+    width: 65vw;
+    margin: auto;
+    opacity: 0.8;
+    border-radius: 20px 20px 20px 20px !important;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.34);
+}
+
+.button{
+    position: absolute;
+    top: 45%;
+    font-size: 400%;
+    color:var(--selago);
+    z-index: 20;
+    width: 100vw;
+    height: 20%;
+}
+.button .left{
+    position: absolute;
+    left: 0px;
+    padding: 20px;
+    background-color: var(--melanzanebutton);
+    border-radius: 0px 20px 20px 0px;
+    transition: background-color 0.7s ease-in;
+    cursor: pointer;
+}
+.button .right{
+    position: absolute;
+    right: 0%;
+    padding: 20px;
+    background-color: var(--melanzanebutton);
+    border-radius: 20px 0px 0px 20px;
+    transition: background-color 0.7s ease-in;
+    cursor: pointer;
+}
+.button .right:hover, .button .left:hover{
+    background-color: var(--melanzane);
+}
+.mySlides {
+    display: none;
+}
+  * {box-sizing:border-box}
+
+.dot {
+    position: relative;
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.active, .dot:hover {
+    background-color: #717171;
+}
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+/*Page weekend d'inté*/
+
+#bdyinte #page1{
+    background-image: url(./image/maj/inte/img1.png);
+}
+#bdyinte #page2{
+    background-image: url(./image/maj/inte/img2.png);
+}
+
+/*Fin Page weekend d'inté*/
+
+/*Page Xtrem */
+#bdyxtrem .textevent{
+    top: 30vh
+}
+#bdyxtrem #page2 .textevent{
+    top: 40vh;
+}
+#bdyxtrem #page1{
+    background-image: url(./image/maj/xtrem/img1.png);
+}
+#bdyxtrem #page2{
+    background-image: url(./image/maj/xtrem/img2.png);
+}
+#bdyxtrem #page3{
+    background-image: url(./image/maj/xtrem/img3.png);
+}
+/*Fin page Xtrem*/
+
+/*Page Summer camp*/
+#bdysummer .textevent{
+    top: 32vh;
+}
+#bdysummer #page1{
+    background-image: url(./image/maj/summer/img1.png);
+}
+#bdysummer #page2{
+    background-image: url(./image/maj/summer/img2.png);
+}
+#bdysummer #page3{
+    background-image: url(./image/maj/summer/img3.png);
+}
+/*Fin page Summer camp*/
+
+/*Page TeamBuiding */
+
+#bdyteam #page1{
+    background-image: url(./image/maj/team/img1.png);
+}
+#bdyteam #page2{
+    background-image: url(./image/maj/team/img2.png);
+}
+#bdyteam #page3{
+    background-image: url(./image/maj/team/img3.png);
+}
+#bdyteam #page3 .textevent{
+    top: 30vh;
+}
+/*Fin page TeamBuiding*/
+
+/*Page Ski*/
+#bdyski #page3 .textevent{
+    top: 12.5vh;
+}
+#bdyski #page1{
+    background-image: url(./image/maj/ski/img1.png);
+}
+#bdyski #page2{
+    background-image: url(./image/maj/ski/img2.png);
+}
+#bdyski #page3{
+    background-image: url(./image/maj/ski/img3.png);
+}
+
+/*Fin Page Ski*/
+/*
+@-webkit-keyframes fade {
+    from {opacity: .4;}
+    to {opacity: 1;}
+  }
+  
+  @keyframes fade {
+    from {margin-top: 0vh;}
+    to {margin-top: 100vh;}
+  }*/
+  @-webkit-keyframes fade {
+    from {opacity: .4;}
+    to {opacity: 1;}
+  }
+  @keyframes fade {
+    from {opacity: .4;}
+    to {opacity: 1;}
+  }
+/*Fin des pages event majeurs*/
+
+@media only screen and (max-width:425px){
+    #bodyus #team , #bodyus #buro, #bodyus #grid3{
+        grid-template-columns: 1fr !important;
+        grid-auto-rows: 1fr;
+    }
+    #grid3 #rescom{
+        grid-column: 1 !important;
+        margin-right: 0 !important;
+    }
+    #grid3 #rescommercial{
+        grid-column: 1 !important;
+        margin-left: 0 !important;
+    }
+    #grid3 #resevent{
+        grid-column: 1 !important;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
+    .textevent{
+       width: 80% !important;
+       top: 65vh;
+    }
+    #bdyxtrem .textevent{
+        top: 39vh !important;
+    }
+    
+}/*
+@media only screen and (min-width:20in){
+    .textevent{
+        top: 70vh;
+    }
+    #bdysummer .textevent{
+        top: 65vh;
+    }
+    #bdyteam .textevent{
+        top: 60vh;
+    }
+    #bdyxtrem .textevent{
+        top: 68vh;
+    }
+    #bdyski .textevent{
+        top: 58vh;
+    }
+}*/
+
+
+
+
+
+
+
+.h45{
+    font-weight: bolder;
+    font-size: larger;
+    line-height: 250%;
+}
+
+.rouge{
+    color: red;
+}
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+  }
+.border{
+    letter-spacing: 15px !important;
+    text-transform: uppercase;
+}
+
+#titr{
+    position: relative;
+    background: #322f317a;
+    color: black;
+    margin: auto;
+    padding: 15px;
+    border: transparent 1px;
+    border-radius: 50px;
+    display: inline-block;
+    top: 40px;
+    cursor: pointer;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    font-family: calson540;
+}
+
+
+/*CSS pour retirer le powered by 000webhostapp*/
+div[style="text-align: right;position: fixed;z-index:9999999;bottom: 0;width: auto;right: 1%;cursor: pointer;line-height: 0;display:block !important;"]{
+    z-index: -500 !important;
+    width: 0px !important;
+    height: 0px !important;
+}
+
+
+
+/*Code de la page US */
+#bodyus{
+    overflow: hidden;
+    min-width: 1500px !important;
+}
+#bodyus #pres{
+    background-image: url(./us/img/Alexandre\ Fong\ Yan\ site.jpg);
+
+} 
+#bodyus #vice{
+    background-image: url(./us/img/Alcime\ site.jpeg);
+}
+#bodyus #treso{
+    background-image: url(./us/img/Bryan\ Caro\ site.jpg);
+}
+#bodyus #secre{
+    background-image: url(./us/img/Clementine\ Tolaini\ site.jpg);
+}
+#bodyus #cassel{
+    background-image: url(./us/img/Antoine\ Cassel\ site.jpg);
+}
+#bodyus #remi{
+    background-image: url(./us/img/Remi\ Devaux\ site.jpg);
+}
+#bodyus #manon{
+    background-image: url(./us/img/Manon\ Fabrega\ site.jpg);
+}
+#bodyus #arthur{
+    background-image: url(./us/img/Arthur\ Ewoudi\ site.jpg);
+}
+#bodyus #rayaan{
+    background-image: url(./us/img/Rayaan\ Guelah\ site.jpg);
+}
+#bodyus #rugby{
+    background-image: url(./us/img/Greegoire\ Kinderman\ site.jpeg);
+}
+#bodyus #escalade{
+    background-image: url(./us/img/Martin\ Helouin\ site.jpeg);
+}
+#bodyus #basket{
+    background-image: url(./us/img/Lucas\ Meny\ Site.jpeg);
+}
+#bodyus #tennis{
+    background-image: url(./us/img/Orlane\ site.jpeg);
+}
+#bodyus #kelly{
+    background-image: url(./us/img/Kelly\ Nunes\ site.jpg);
+}
+#bodyus #fitness{
+    background-image: url(./us/img/Thomas\ Gauzins\ site.jpeg);
+}
+#bodyus #grob{
+    background-image: url(./us/img/Zoe\ site.jpeg);
+}
+#bodyus #russe{
+    background-image: url(./us/img/Quentin\ site.jpeg);
+}
+#bodyus #champon{
+    background-image: url(./us/img/Laura\ Champon\ site.jpeg);
+}
+#bodyus #haya{
+    background-image: url(./us/img/Hayate\ Adame\ site.jpeg);
+}
+#bodyus #alex{
+    background-image: url(./us/img/Alexandre\ Marquis.jpg);
+}
+
+
+.personne {
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    z-index: -20;
+    
+}
+.bouton .left img, .bouton .right img{
+    width: 2vw;
+    cursor: pointer;
+    transition: width 0.5s ease-in-out;
+}
+.bouton{
+    position: absolute;
+    top: 48.5%;
+    z-index: 20;
+    width: 100vw;
+}
+.bouton .right{
+    position: absolute;
+    right: 15px;
+}
+.bouton .left{
+    position: absolute;
+    left: 15px;
+}
+
+.bouton .left img:hover, .bouton .right img:hover{
+    width: 2.2vw;
+}
+
+
+.fonction{
+    font-size: 50px;
+    margin: 0 0 0 10%;
+    color: white;
+    font-family: calson540;
+    padding: 50px 0 50px 0;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+}
+.poste{
+    letter-spacing: normal;
+    font-size: 35px;
+}
+.txtus{
+    color: white;
+    font-size: 0.9vw;
+    width: 30vw;
+    text-align: justify;
+    margin-left: 10%;
+    background-color: var(--melanzanet);
+    padding: 25px;
+    border-radius: 5%;
+    line-height: 125%;
+}
+.doto{
+    position: absolute;
+    bottom: 30px;
+    width: 100vw;
+    line-height: 200%;
+}
+.name{
+    color: white;
+    margin-right: 1%;
+    font-family: calson540;
+    text-transform: uppercase;
+    transition: border 0.7s ease-in-out;
+    cursor: pointer;
+}
+.activ{
+    border-bottom: solid;
+    font-weight: bolder;
+    
+}
+.name:hover{
+    font-weight: bold;
+}
+@media only screen and (max-width:1500px){
+    .txtus{
+        position: relative;
+        width: 45vw;
+        left: -25px;
+    }
+}

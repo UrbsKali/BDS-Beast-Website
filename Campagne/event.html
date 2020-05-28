@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+<head>
+    <title>Nos Evenements | BDS Beast</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./image/LOGO.png" type="image/x-icon">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154977378-2"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-154977378-2');
+    </script>
+</head>
+<body style="height: 100%;overflow-x: hidden;">
+    <div id="bodyevent" style="height: 100%;">
+        
+        <div style="display: flex;">
+            <h1>Evenements Majeurs</h1>
+        </div>
+        
+        <div id="gridevent" style="margin-top: 3%;">
+            <div class="tuile" id="teambuild" onclick="window.open('./maj/teambuilding.html')">
+                <span>Team Building</span>
+            </div>
+            <div class="tuile" id="week" onclick="window.open('./maj/inte.html')">
+                <span>Weekend d'Intégration</span>
+            </div>
+            <div class="tuile" id="ski" onclick="window.open('./maj/ski.html')">
+                <span>Ski</span>
+            </div>
+            <div class="tuile" id="xtrem" onclick="window.open('./maj/xtrem.html')">
+                <span>Weekend X’Trem</span>
+            </div>
+            <div class="tuile" id="sumcamp" onclick="window.open('./maj/summer.html', '_blank')">
+                <span>Weekend Summer Camp</span>
+            </div>
+            
+        </div>
+        <div style="display: flex;width: 100vw;height: 5vh;">
+                <img src="./image/LOGO.png" alt="Logo" style="margin: auto;width: 4vw; position: relative; top: 0px;">
+        </div>
+    </div>
+</body>
+</html>
